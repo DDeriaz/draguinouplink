@@ -65,3 +65,5 @@ The expected output in Akenza for ```"48656C6C6F20576F726C64"``` (```Hello World
   "port": 1
 }
 ```
+
+Step 4: Add your **new device** in Akenza and connect to the **Akenza Database**.
