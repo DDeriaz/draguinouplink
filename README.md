@@ -20,24 +20,15 @@ This project connects an **Arduino UNO** (or compatible board) with a **Dragino 
 **Step 1**: Connect the antenna to the Dragino LA66 shield before attaching it to the Arduino.
 Only after the antenna is securely connected, insert the shield onto the Arduino board.
 
-**Step 2**: Now upload the lorawan.ino sketch to your Arduino using the Arduino IDE.
+**Step 2**: Now upload the [lorawan.ino](./lorawan.ino) sketch to your Arduino using the Arduino IDE.
 
-* Message: `Hello World`
-* Payload Hex: `48656C6C6F20576F726C64`
-* Command sent to LA66:
-
-  ```
-  AT+SENDB=0,1,11,48656C6C6F20576F726C64
-  ```
+*Remark on the code line*: ```AT+SENDB=0,1,11,48656C6C6F20576F726C64```
 
   * `0` = Unconfirmed uplink
   * `1` = LoRaWAN port
   * `11` = Payload length in bytes
 
-## Akenza Integration
-
-* Swisscom LPN forwards uplinks to Akenza via HTTP push
-* Akenza decodes payload using a **JavaScript script**:
+**Step 3**: Create an account on akenza.io, then add a new device using the following device settings:
 
 ```javascript
 function consume(event) {
@@ -66,7 +57,7 @@ function consume(event) {
 
 ```
 
-## Output in Akenza
+The expected output in Akenza for ```"48656C6C6F20576F726C64"``` (```Hello World```) should be :
 
 ```json
 {
@@ -74,13 +65,3 @@ function consume(event) {
   "port": 1
 }
 ```
-
-## Future Work
-
-* Sensor integration (e.g., temperature, humidity)
-* Payload structuring for multi-value data
-* Downlink support and rejoin logic
-
-## License
-
-MIT
