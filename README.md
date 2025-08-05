@@ -27,6 +27,7 @@ Only after the antenna is securely connected, insert the shield onto the Arduino
   * `0` = Unconfirmed uplink
   * `1` = LoRaWAN port
   * `11` = Payload length in bytes
+
 where ```"48656C6C6F20576F726C64"``` is ```"Hello World"``` in bytes.
 
 **Step 3**: Create an account on akenza.io, then add a new device using the following device settings:
